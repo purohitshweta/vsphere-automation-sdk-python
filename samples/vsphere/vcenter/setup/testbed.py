@@ -19,18 +19,20 @@ config["SERVER"] = ""
 config["USERNAME"] = "administrator@vsphere.local"
 config["PASSWORD"] = ""
 
-config["ESX_HOST1"] = ""
-config["ESX_HOST2"] = ""
-config["ESX_USER"] = "root"
-config["ESX_PASS"] = ""
+config["ESX1_HOST"] = ""
+config["ESX2_HOST"] = ""
+config["ESX1_USER"] = ""
+config["ESX2_USER"] = ""
+config["ESX1_PWD"] = ""
+config["ESX2_PWD"] = ""
 
 config["USE_NFS"] = True
 config["NFS_HOST"] = ""
 config["NFS_REMOTE_PATH"] = "/store1"
 config["NFS_DATASTORE_NAME"] = "Shared_NFS_Volume"
 
-config["ESX_HOST1_VMFS_DATASTORE"] = "Local_VMFS_Volume_on_Host1"
-config["ESX_HOST2_VMFS_DATASTORE"] = "Local_VMFS_Volume_on_Host2"
+config["ESX1_HOST_VMFS_DATASTORE"] = "Local_VMFS_Volume_on_Host1"
+config["ESX2_HOST_VMFS_DATASTORE"] = "Local_VMFS_Volume_on_Host2"
 
 config["DATACENTER1_NAME"] = "Sample_DC_1"
 config["DATACENTER2_NAME"] = "Sample_DC_2"
@@ -65,7 +67,7 @@ config["BACKENDS_DATASTORE_ROOT_PATH"] = "[{}] Sample_Backends".format(config["V
 config["DISK_DATACENTER_NAME"] = config["VM_DATACENTER_NAME"]
 config["DISK_DATASTORE_ROOT_PATH"] = config["BACKENDS_DATASTORE_ROOT_PATH"] + "/disk"
 
-config["ISO_SRC_URL"] = "https://packages.vmware.com/photon/3.0/Rev3/iso/photon-minimal-3.0-a383732.iso"
+config["ISO_SRC_URL"] = "https://packages.vcfd.broadcom.net/artifactory/vmlib-generic-virtual/exit15/home/ISO-Images/OS/Linux/Photon/5.0/GA/photon-5.0-dde71ec57.x86_64.iso"
 config["ISO_DATACENTER_NAME"] = config["VM_DATACENTER_NAME"]
 config["ISO_DATASTORE_ROOT_PATH"] = config["BACKENDS_DATASTORE_ROOT_PATH"] + "/iso"
 config["ISO_DATASTORE_PATH"] = config["ISO_DATASTORE_ROOT_PATH"] + "/photonOS.iso"
@@ -81,7 +83,7 @@ config["PARALLEL_PORT_DATACENTER_NAME"] = config["VM_DATACENTER_NAME"]
 config["PARALLEL_PORT_DATASTORE_ROOT_PATH"] = config["BACKENDS_DATASTORE_ROOT_PATH"] + "/parallel"
 config["PARALLEL_PORT_DATASTORE_PATH"] = config["PARALLEL_PORT_DATASTORE_ROOT_PATH"] + "/parallel.log"
 
-config["FLOPPY_SRC_URL"] = "http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.0/fdboot.img"
+config["FLOPPY_SRC_URL"] = "https://usw5.packages.broadcom.com/ui/native/dp-lwd-generic-virtual/drs/hotplugbootimage/hotPlug.flp"
 config["FLOPPY_DATACENTER_NAME"] = config["VM_DATACENTER_NAME"]
 config["FLOPPY_DATASTORE_ROOT_PATH"] = config["BACKENDS_DATASTORE_ROOT_PATH"] + "/floppy"
 config["FLOPPY_DATASTORE_PATH"] = config["FLOPPY_DATASTORE_ROOT_PATH"] + "/fdboot.img"
@@ -95,6 +97,7 @@ config["SCHEDULE"] = 30
 config["RETENTION_UNIT"] = "HOUR"
 config["RETENTION"] = 6
 config["LOCK"] = False
+
 
 class Testbed(object):
     def __init__(self):
